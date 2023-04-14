@@ -1,0 +1,51 @@
+.wrapper {
+  background: -webkit-linear-gradient(90deg, #f6f7f8,#e1e8f2,#d9e1ee);
+  background: linear-gradient(90deg, #f6f7f8,#e1e8f2,#d9e1ee);
+}
+
+.img_container {
+  margin: 0;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.icon_like {
+  background-image: url(../../images/heart-3-line.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+
+.icon_delete {
+  background-image: url(../../images/delete-bin-7-fill.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}

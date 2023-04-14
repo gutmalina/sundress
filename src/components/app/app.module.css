@@ -1,0 +1,19 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.title {
+  font-size: 28px;
+}
+
+.subtitle {}
+
+.filter {
+  margin: 4vw 0;
+}
+
+.checkbox {}
+
+.text {}
