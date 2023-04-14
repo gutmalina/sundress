@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/sundress/static/css/main.334dd294.css",
+    "main.js": "/sundress/static/js/main.e02da175.js",
+    "static/js/787.a8216c96.chunk.js": "/sundress/static/js/787.a8216c96.chunk.js",
+    "static/media/heart-3-line.svg": "/sundress/static/media/heart-3-line.3b87a18a0d9499be162f.svg",
+    "index.html": "/sundress/index.html",
+    "static/media/delete-bin-7-line.svg": "/sundress/static/media/delete-bin-7-line.4c2b710043d839353e48.svg",
+    "static/media/heart-3-fill.svg": "/sundress/static/media/heart-3-fill.68e811b299a1b14fe05a.svg",
+    "main.334dd294.css.map": "/sundress/static/css/main.334dd294.css.map",
+    "main.e02da175.js.map": "/sundress/static/js/main.e02da175.js.map",
+    "787.a8216c96.chunk.js.map": "/sundress/static/js/787.a8216c96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.334dd294.css",
+    "static/js/main.e02da175.js"
+  ]
+}
