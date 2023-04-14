@@ -5,6 +5,7 @@ body {
   font-style: italic;
   font-weight: bold;
   padding-top: 20px;
+  margin: auto;
   font-size: 23px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
