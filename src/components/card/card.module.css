@@ -1,6 +1,7 @@
 .wrapper {
   background: -webkit-linear-gradient(90deg, #f6f7f8,#e1e8f2,#d9e1ee);
   background: linear-gradient(90deg, #f6f7f8,#e1e8f2,#d9e1ee);
+  border-radius: 10px;
 }
 
 .img_container {
@@ -32,18 +33,26 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .icon_like {
-  background-image: url(../../images/heart-3-line.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 30px;
   height: 30px;
 }
 
+.icon_like_active {
+  background-image: url(../../images/heart-3-fill.svg);
+}
+
+.icon_like_inactive {
+  background-image: url(../../images/heart-3-line.svg);
+}
+
 .icon_delete {
-  background-image: url(../../images/delete-bin-7-fill.svg);
+  background-image: url(../../images/delete-bin-7-line.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 30px;

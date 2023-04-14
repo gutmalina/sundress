@@ -1,10 +1,6 @@
-import { appReducer } from "./app";
-import { LOGOUT } from "../actions/logout";
+import { combineReducers } from "redux"
+import { cardsReducer } from "./cards"
 
-export const rootReducer = (state, action) => {
-  if (action.type === LOGOUT) {
-    state = undefined;
-  }
-
-  return appReducer(state, action);
-};
+export const rootReducer = combineReducers({
+  cards: cardsReducer,
+})

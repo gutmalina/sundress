@@ -3,11 +3,11 @@ export class Api {
       this._headers = headers;
       this._baseUrl =baseUrl;
     }
-  
+
     /** проверить ответ */
     _checkResponse(res){
       if(res.ok || res.success){
-        return res.json()
+        return res.json().then(res=> res.data)
       }else{
         return Promise.reject(res)
       }
@@ -19,7 +19,7 @@ export class Api {
         headers: this._headers
       })
       .then(this._checkResponse)
-    }  
+    }
   }
 
   const api = new Api({
@@ -28,5 +28,5 @@ export class Api {
       'Content-Type': 'application/json'
     }
   });
-  
+
   export default api;

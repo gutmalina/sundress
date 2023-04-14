@@ -1,30 +1,41 @@
 import { useEffect, useState } from "react";
-import api from "../../utils/api";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/card";
-import styles from './app.module.css'
+import styles from "./app.module.css";
+import { getAllCardsAction } from "../../services/actions/cards";
+import { useCallback } from "react";
+import { TITLE, SUBTITLE, TEXT_FILTER_ACTIVE, TEXT_FILTER_INACTIVE } from "../../utils/constants";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const cards = useSelector((store) => store.cards.cards);
+  const [isChecked, setIsChecked] = useState(false);
+  const textBtnFilter = isChecked ? `${TEXT_FILTER_INACTIVE}` : `${TEXT_FILTER_ACTIVE}`
+
+  const handleChangeChecked = () => {
+    isChecked ? setIsChecked(false) : setIsChecked(true);
+  };
+
+  const filterCards = useCallback(() => {
+    return cards.filter((card) => card.isLike);
+  }, [cards]);
 
   useEffect(() => {
-    api
-      .getAllData()
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    dispatch(getAllCardsAction());
+  }, [dispatch]);
 
   return (
     <>
-    <h1 className={styles.title}>Тестовое задание react в проекты Сарафан и Докт24</h1>
-    <p className={styles.subtitle}>Для выполнения тестового задания использовано публичное Disney API</p>
-    <div className={styles.filter}>
-      <label for="like" className={styles.text}>Только отмеченные Like</label>
-      <input id="like" className={styles.checkbox} type="checkbox"></input>
-    </div>
+      <h1 className={styles.title}>{TITLE}</h1>
+      <p className={styles.subtitle}>{SUBTITLE}</p>
+      <button type="button" className={styles.btn_filter} onClick={handleChangeChecked}>
+      {textBtnFilter}</button>
       <section className={styles.cards}>
-        {data.map((card) => (
-          <Card card={card} key={card._id}></Card>
-        ))}
+        {!isChecked
+          ? cards.map((card) => <Card card={card} key={card._id}></Card>)
+          : filterCards().map((card) => (
+              <Card card={card} key={card._id}></Card>
+            ))}
       </section>
     </>
   );
